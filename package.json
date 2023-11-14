@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "animate.css": "^4.1.1",
+    "tailwindcss": "^3.3.4"
+  },
+  "scripts": {
+    "build": "tailwindcss build css/tailwind.css -o css/dist/tailwind.css"
+  }
+}
