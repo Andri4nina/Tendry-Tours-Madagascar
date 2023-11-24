@@ -13,111 +13,505 @@
     <!-- Poppins For Title -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"defer></script>
 
 
     <title>Tendry Tours Madagascar</title>
 </head>
-<body>
+<body class="min-h-screen relative" id="top">
+    
+<header class="fixed z-50 w-full">
+    <div class="relative w-full flex justify-between items-center top_header">
+        <div class="relative w-1/4 flex justify-evenly ">
+            <div class="h-12 w-12 flex justify-center items-center bg-skin1 rounded-full text-white calldetail">
+                <i class="fa fa-phone rotate-90"></i>
+            </div>
 
-    <nav class="z-50 fixed top-0 left-0 w-full py-4 px-52 bg-green-500 flex items-center justify-between   nav">
-      
-        <div class="relative cursor-pointer navOpenBtn" id="navOpenBtn" onclick="ToggleMenu()">
+            <div class=" flex flex-col justify-start detailcall">
+                <span>
+                    Pour plus de details
+                </span>
+                <span>
+                    032 32 032 32
+                </span>
+            </div>
+        </div>
+        <div class="w-2/4 flex justify-self-center items-center">
+            <div class="w-1/3 flex justify-end">
+                <img src="img/Logo.png" alt="" class="w-20 h-20">
+            </div>
+            <div class="w-2/3">
+                <h3>Tendry <span class="text-skin1">Tours</span> <span class="text-skin2">Madagascar</span> </h3>
+            </div>
+        </div>
+        <div class=" w-1/4">
+            <div class="pr-5 w-full flex" id="searchstyle">
+                <div class="w-3/4">
+                    <input class="w-full relative" id="search-input" type="search" placeholder="ceci est en mode beta"> 
+                </div>
+                <div class="w-1/4">
+                    <i class="relative fa fa-search" onclick="toggleseacrhbox()"></i>
+                </div>
+              
+            </div>
+        </div>
+
+        <div class=" absolute right-6  top-6 cursor-pointer navOpenBtn" id="navOpenBtn" onclick="ToggleMenu()">
             <div class="dotmenu" id="upPoint"></div>
             <div class="dotmenu" id="midPoint"></div>
             <div class="dotmenu" id="botPoint"></div>
         </div>
 
-        <a href="#" class="text-white cursor-pointer flex justify-evenly items-center text-xl font-medium logo"><img src="img/Logo.png" class="w-14 h-w-14" alt="Logo"> <h1>Tendry Tours Madagascar</h1></a>
-  
-        <ul class="relative flex items-center list-none nav-links">
-            
-          <li><a href="#Acceuil" class="text-black cursor-pointer active">Acceuil</a></li>
-          <li><a href="#A_propos" class="text-black cursor-pointer">A propos</a></li>
-          <li><a href="#Nos_services" class="text-black cursor-pointer">Nos Services</a></li>
-          <li><a href="#Contact" class="text-black cursor-pointer">Contact</a></li>
-          <div class="menuSelector"></div>
-        </ul>
-    </nav>
-
-
-
-    <section class="min-h-screen  relative px-5 pt-5" id="Acceuil">
-        <div class="relative h-full  mx-auto max-w-5xl" >
-            <div class="w-full h-full flex justify-center items-center">
-                <div class="text-center">
-                    <h2 class="text-2xl">Bienvenue sur Tendry Tours Madagascar </h2>
-                    <h1 class="text-4xl">NOUS VOUS PROPOSONS UN VOYAGE INOUBLIABLE</h1>
-                    <p>
-                        Explorez des paysages époustouflants, rencontrez des animaux uniques et découvrez une culture riche.
-                    </p>
+    </div>
     
-                    <button class="mx-auto my-5 text-center">Reserver Maintenant!</b>
+    <div class="w-full flex items-center sticky_header">
+        <div class="w-1/6 flex justify-center">
+            <div class="flex justify-around items-center gap-5 social-media">
+                <div class="social-media-container" id="mediaFacebook">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="social-media-container" id="mediaTwitter">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="social-media-container" id="mediaYoutube">
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-4/6 flex justify-center menuresp">
+            <ul class="relative flex gap-5 justify-between">
+                <li class="nav-menu active"><a href="#Acceuil">Acceuil</a></li>
+                <li class="nav-menu"><a href="#A_propos">A propos</a></li>
+                <li class="nav-menu"><a href="#Service">Service</a></li>
+                <li class="nav-menu"><a href="#Packs">Nos packs</a></li>
+                <li class="nav-menu"><a href="#Galerie">Galerie</a></li>
+                <li class="nav-menu"><a href="#Contact">Contact</a></li>
+            </ul>
+         
+        </div>
+
+        <div class="w-1/6 flex  justify-center modethemeresp ">
+            <li class="h-12 mt-3 list-none gap-2 flex items-center mode">
+                <div class="relative moon-sun overflow-hidden light">
+                    <div class="absolute w-full h-full top-0 left-0 sun-component">
+                        <img src="img/component/sun.jpeg" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute w-full h-full top-0 left-0 moon-component">
+                        <img src="img/component/moon.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="cursor-pointer sun" id="moon-sun-img" onclick="modeSwitcher()">
+                    </div>
                     
-                  
                 </div>
-            </div> 
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 ToApropos">
-                <a href="#A_propos" class="scrolldown" id="scrolldown"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-            </div> 
-        </div>
-       
-    </section>
-
-    <section class="min-h-screen relative px-5 pt-5" id="A_propos">       
-       
-   </section>
-
-    <section class="min-h-screen relative px-5 pt-5" id="Nos_services">
-        <br><br><br><br>
-        <h2 class="section-title">Nos Services</h2>
-        <p>Nous offrons des voyages inoubliables en bateau ou en avion pour explorer les merveilles de Madagascar.</p>
-        <h2>Pourquoi choisir Nous?</h2>
-        <ul>
-            <li>Expérience inégalée dans l'industrie du voyage</li>
-            <li>Guides locaux experts connaissant chaque coin de Madagascar</li>
-            <li>Options de voyage flexibles selon vos préférences</li>
-            <li>Engagement envers la durabilité et la préservation de l'environnement</li>
-            <li>Service clientèle exceptionnel disponible 24/7</li>
-        </ul>
-    </section>
+            </li>
+            <li class="h-12 mt-3 translate-x-4 list-none flex items-center gap-5 theme">
+               <input type="color" id="stylecolor" class="flex items-center justify-center w-5 h-5 rounded-md border-none bg-transparent cursor-pointer appearance-none">
+            </li> 
+        </div> 
+    </div>
+</header>
 
 
 
+<section class="min-h-screen  relative px-5 pt-5" id="Acceuil">
+    <div class="relative h-screen  mx-auto max-w-5xl" >
+        <div class="w-full h-full flex justify-center items-center">
+            <div class="text-center">
+                <h2 class="text-2xl">Bienvenue sur <span class="text-skin1">Tendry</span> <span class="text-skin2">Tours</span> Madagascar</h2>
+                <h1 class="text-4xl">NOUS VOUS PROPOSONS UN VOYAGE INOUBLIABLE</h1>
+                <p>
+                    Explorez des paysages époustouflants, rencontrez des animaux uniques et découvrez une culture riche.
+                </p>
 
-
-
-
-
-  
-    <section class="min-h-screen relative px-5 pt-5" id="Contact">        <br><br><br><br><h2 class="section-title"></h2></section>
-   
-   
-    <footer class="h-screen">
-        <div class="flex">
-            <div class="w-1/2 px-5">
-
+                <button class="mx-auto my-5 text-center">Reserver Maintenant!</b>
+                
+              
             </div>
-            <div class="w-1/2 px-5">
-                <div class="cube" id="facebook">
-                    <a href="#facebook">
-                        <div>
-                            <span style="--i:0;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl bx bxl-facebook"></i>
-                            </span>
-                            <span style="--i:1;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl bx bxl-facebook"></i></span>
-                            <span style="--i:2;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl bx bxl-facebook"></i></span>
-                            <span style="--i:3;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl bx bxl-facebook"></i></span>
-                            <span class="top"></span>
+        </div> 
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 ToApropos">
+            <a href="#A_propos" class="scrolldown" id="scrolldown"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        </div> 
+    </div>
+   
+</section>
+
+
+<section class="min-h-screen relative px-5 pt-5" id="A_propos">
+    <div class="w-full text-center"><h3 class="section-title w-80 mx-auto">A propos</h3></div>
+    <div class="mt-10 w-full flex justify-center items-center">
+        <div class="mx-auto w-2/3 flex justify-center items-center" >
+            <div class="w-1/2">
+                <img src="img/Logo.png" alt="" srcset="">
+            </div>
+            <div class="w-1/2">
+                <h2>Qui nous sommes?</h2>
+                <br><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, modi laudantium! Dolorum at possimus quos nam repellendus ducimus labore dignissimos molestias, optio temporibus repellat incidunt iure earum totam quod illum.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="min-h-screen  relative px-5 pt-5" id="Service">
+    <div class="w-full mb-5 text-center"><h3 class="section-title w-80 mx-auto">Nos services</h3></div>
+    <div class="w-10/12 mx-auto flex justify-between items-center gap-5">
+        <div class="w-2/3 mx-auto h-auto mb-5 lg:w-1/3 card3d">
+            <h2 class="text-2xl mb-10 text-center">
+              <i class="fa fa-car"></i> <br>
+              <span>Voyage en voiture</span>
+            </h2>
+           
+            <p>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Autem architecto veniam aliquam saepe mollitia eum odit eos quam,
+                 odio repudiandae maiores dicta hic nesciunt.
+                Nobis exercitationem fugiat repellendus consectetur quisquam!
+            </p>          
+        </div>
+        <div class="w-2/3 mx-auto h-auto mb-5 lg:w-1/3 card3d">
+            <h2 class="text-2xl mb-10 text-center">
+              <i class="fa fa-ship"></i> <br>
+              <span>Voyage en bateau</span>
+            </h2>
+           
+            <p>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Autem architecto veniam aliquam saepe mollitia eum odit eos quam,
+                 odio repudiandae maiores dicta hic nesciunt.
+                Nobis exercitationem fugiat repellendus consectetur quisquam!
+            </p>          
+        </div>
+        <div class="w-2/3 mx-auto h-auto mb-5 lg:w-1/3 card3d">
+            <h2 class="text-2xl mb-10 text-center">
+              <i class="fa fa-plane"></i> <br>
+              <span>Voyage en avion</span>
+            </h2>
+           
+            <p>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Autem architecto veniam aliquam saepe mollitia eum odit eos quam,
+                 odio repudiandae maiores dicta hic nesciunt.
+                Nobis exercitationem fugiat repellendus consectetur quisquam!
+            </p>          
+        </div>
+    </div>
+</section>
+
+<section class="min-h-screen relative px-5 pt-5" id="Packs">
+    <div class="w-full text-center"><h3 class="section-title w-80 mx-auto">Nos packs</h3></div>
+    <p class="text-center my-5">Vous pouvez consulter des packs exclusives</p>
+    <div class="flex my-5 packcards">
+        <div class="w-1/4 h-80">
+            <img class="w-full h-full " src="img/component/voyage avion.jpg" alt="voyage en avion ">
+        </div>
+        <div class="w-2/4 packtext">
+            <h4 class="text-skin1 px-5 font-semibold text-2xl">Profite d'une facilite de voyage en avion </h4>
+            
+            <p class="text-info px-5 pt-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Incidunt id possimus hic nihil aspernatur veniam odio 
+                 voluptatibus laudantium recusandae atque. Error sapiente omnis, 
+                pariatur tempora nam accusamus voluptatibus eos optio?
+            </p>
+
+
+            <div class="my-5 flex items-center gap-5 w-8/12 justify-items-center ml-5 detailpacks ">
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-clock-o text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info">10h</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-users text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info">5</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-location-arrow text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info text-xs">Tamatave</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/4 bg-skin1 flex flex-col gap-5 justify-center items-center text-white">
+            <span class="text-2xl font-bold">5 000 000 ar <small>/personne</small></span>
+            <button>Prendre</button>
+        </div>
+    </div>
+
+    <div class="flex my-5 packcards">
+        <div class="w-1/4 h-80">
+            <img class="w-full h-full " src="img/component/voyage voiture.jpg" alt="voyage en voiture ">
+        </div>
+        <div class="w-2/4 packtext">
+            <h4 class="text-skin1 px-5 font-semibold text-2xl">Profite d'une facilite de voyage en voiture </h4>
+            
+            <p class="text-info px-5 pt-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Incidunt id possimus hic nihil aspernatur veniam odio 
+                 voluptatibus laudantium recusandae atque. Error sapiente omnis, 
+                pariatur tempora nam accusamus voluptatibus eos optio?
+            </p>
+
+
+            <div class="my-5 flex items-center gap-5 w-8/12 justify-items-center ml-5 detailpacks ">
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-clock-o text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info">10h</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-users text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info">5</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-location-arrow text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info text-xs">Tamatave</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/4 bg-skin1 flex flex-col gap-5 justify-center items-center text-white">
+            <span class="text-2xl font-bold">5 000 000 ar <small>/personne</small></span>
+            <button>Prendre</button>
+        </div>
+    </div>
+
+    <div class="flex my-5 packcards">
+        <div class="w-1/4 h-80">
+            <img class="w-full h-full " src="img/component/voyage bateau.jpg" alt="voyage en bateau ">
+        </div>
+        <div class="w-2/4 packtext">
+            <h4 class="text-skin1 px-5 font-semibold text-2xl">Profite d'une facilite de voyage en bateau </h4>
+            
+            <p class="text-info px-5 pt-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Incidunt id possimus hic nihil aspernatur veniam odio 
+                 voluptatibus laudantium recusandae atque. Error sapiente omnis, 
+                pariatur tempora nam accusamus voluptatibus eos optio?
+            </p>
+
+
+            <div class="my-5 flex items-center gap-5 w-8/12 justify-items-center ml-5 detailpacks ">
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-clock-o text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info">10h</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-users text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info">5</p>
+                    </div>
+                </div>
+                <div class="w-1/3 flex justify-around">
+                    <div class="w-1/2">
+                        <i class="fa fa-location-arrow text-skin1"></i>
+                    </div>
+                    <div>
+                        <p class="text-info text-xs">Tamatave</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/4 bg-skin1 flex flex-col gap-5 justify-center items-center text-white">
+            <span class="text-2xl font-bold">5 000 000 ar <small>/personne</small></span>
+            <button>Prendre</button>
+        </div>
+    </div>
+</section>
+
+<section class="min-h-screen relative px-5 pt-5" id="Galerie">
+    <div class="w-full text-center"><h3 class="section-title w-80 mx-auto">Galerie</h3></div>
+    <p class="text-center my-5">Quelque photo envoyer par nos clients</p>
+    <div class="max-w-5xl  flex gap-5  mx-auto">
+        <div class="w-1/3 justify-between flex flex-col gap-5">
+            <div class="imagecontainer">
+                <img src="img/component/voiture1.jpg" alt="voiture">
+            </div>
+            <div class="imagecontainer">
+                <img src="img/component/bus.jpg" alt="bus">
+            </div>
+        </div>
+        <div class="w-1/3">
+            <div class="imagecontainer">
+                <img src="img/component/avion.jpg" alt="avion">
+            </div>
+        </div>
+        <div class="w-1/3 justify-between flex flex-col gap-5">
+            <div class="imagecontainer">
+                <img src="img/component/bateau.jpg" alt="bateau">
+            </div>
+            <div class="imagecontainer">
+                <img src="img/component/bateau2.jpg" alt="bateau">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="min-h-screen relative  pt-5" id="Contact">
+    <div class="w-full text-center"><h3 class="section-title w-80 mx-auto">Contact</h3></div>
+    <div class="w-full  text-white">
+        <div class="w-10/12 flex justify-between mx-auto">
+            <div class="w-1/3 mt-5 flex flex-col justify-center">
+                <h4 class="my-5 font-bold text-center text-2xl">N'attendez plus</h4>
+                <p class="text-center my-5">
+                    Nous sommes à votre disposition
+                    pour vous aider
+                </p>
+                <button>Contactez-nous</button>
+            </div>
+
+            <div class="relative w-1/3 mt-5 flex flex-col justify-center">
+                <p class="text-center">Suivez nous sur nos reseau sociaux</p>
+                <div class="w-full h-full reseau_social">
+                    <div class="cube" id="facebook">
+                        <a href="#facebook">
+                            <div>
+                                <span style="--i:0;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-facebook"></i>
+                                </span>
+                                <span style="--i:1;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-facebook"></i></span>
+                                <span style="--i:2;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-facebook"></i></span>
+                                <span style="--i:3;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-facebook"></i></span>
+                                <span class="top"></span>
+                            </div>
+                        </a>
+                     
+                    </div>
+                    <a href="#linkedin">
+                        <div class="cube" id="linkedin">
+                        
+                                <div>
+                                    <span style="--i:0;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-linkedin"></i>
+                                    </span>
+                                    <span style="--i:1;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-linkedin"></i></span>
+                                    <span style="--i:2;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-linkedin"></i></span>
+                                    <span style="--i:3;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-linkedin"></i></span>
+                                    <span class="top"></span>
+                                </div>
+                        
+                            
                         </div>
-                    </a>
-                 
+                    </a> 
+                    <div class="cube" id="google">
+                        <a href="#google">
+                            <div>
+                                <span style="--i:0;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-google"></i>
+                                </span>
+                                <span style="--i:1;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-google"></i></span>
+                                <span style="--i:2;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-google"></i></span>
+                                <span style="--i:3;"> <i class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-9xl fa fa-google"></i></span>
+                                <span class="top"></span>
+                            </div>
+                        </a>
+                   
+                    </div> 
+        
                 </div>
             </div>
         </div>
-        <div class="text-center text-white pt-5 pb-16 bg-black h-10">
-            <p>&copy; 2023 TENDRY TOURS MADAGASCAR. Tous droits réservés.</p>
+    </div>
+
+    
+   
+</section>
+
+<footer class="w-full bg-black text-white  pt-20">
+    <div class="w-full px-10 py-5 gap-5 flex justify-between items-center">
+        <div class="w-1/3">
+            <div class="w-full flex justify-self-center items-center">
+                <div class="w-1/3 flex justify-end">
+                    <img src="img/Logo.png" alt="" class="w-20 h-20">
+                </div>
+                <div class="font-semibold w-2/3">
+                    <h3>Tendry <span class="text-skin1">Tours</span> <span class="text-skin2">Madagascar</span> </h3>
+                </div>
+            </div>
+            <p class="px-5 text-info">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Perferendis vero culpa earum neque reprehenderit dolore cum 
+                quos consectetur nostrum magnam enim, 
+                non porro facilis! Delectus voluptas saepe ex debitis praesentium?
+            </p>
         </div>
-    </footer>
+        <div class="w-1/3">
+            <h5 class="text-skin1 py-5">Contactez-nous</h5>
+            <span> Vous pouvez nous contacter</span>
+            <div class="flex text-base my-5 gap-5 w-full">
+                <div class="w-1/12">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div class="w-11/12">
+                    032 32 032 32
+                </div>
+            </div>
+            <div class="flex text-base my-5 gap-5 w-full">
+                <div class="w-1/12">
+                    <i class="fa fa-envelope-o"></i>
+                </div>
+                <div class="w-11/12">
+                   Exemple@gmail.com
+                </div>
+            </div>
+            <div class="flex text-base my-5 gap-5 w-full">
+                <div class="w-1/12">
+                    <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="w-11/12">
+                    Antananarivo Madagascar
+                </div>
+            </div>
+        </div>
+        <div class="w-1/3">
+            <h5 class="text-skin1 py-5">Vous pouvez vous abonnez</h5>
+            <div class="flex text-base my-5 gap-5 w-full">
+                <div class="gap-5 flex flex-col">
+                    <input type="email" placeholder="Saisir votre adresse Email" >
+                    <button >S'abonner</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full py-10 bg-slate-950 text-center">
+        <i class="fa fa-copyright"> Andrianina 2023</i>
+    </div>
+</footer>
+
+
+
+
+<a href="#top">
+    <div>
+
+    </div>
+</a>
 
 </body>
 </html>
