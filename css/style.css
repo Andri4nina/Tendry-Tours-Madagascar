@@ -302,6 +302,20 @@ button:active::after {
 .top_header{
   border-bottom: 1px solid var(--bg-light);
 }
+
+.Myheader{
+  transition: var(--trans-04);
+  -webkit-transition: var(--trans-04);
+  -moz-transition: var(--trans-04);
+  -ms-transition: var(--trans-04);
+  -o-transition: var(--trans-04);
+} 
+
+
+
+
+ 
+
 /* media header */
 .social-media-container{
   background: var(--bg-black-50);
@@ -541,11 +555,14 @@ button:active::after {
 .packcards{
   border-radius: 50px;
   overflow: hidden;
+  min-height: 300px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
 }
+
+
 .packtext{
   background-color: var(--bg-black-100);
   padding-top: 20px;
@@ -573,15 +590,14 @@ button:active::after {
 /* Fin des packs */
 
 /* Galerie */
-.imagecontainer{
-  overflow: hidden;
-  height: auto;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+.imagecontainer img{
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
+
 /* Fin galerie */
 
 /* Contact */
@@ -796,7 +812,12 @@ button:active::after {
   .navOpenBtn{
     display: block;
     z-index: 41;
-  }
+    transition:var(--trans-03);
+    -webkit-transition:var(--trans-03);
+    -moz-transition:var(--trans-03);
+    -ms-transition:var(--trans-03);
+    -o-transition:var(--trans-03);
+}
 
   .menuresp{
     position: fixed;
@@ -830,7 +851,14 @@ button:active::after {
   animation: normal animate__bounce;
   -webkit-animation: normal animate__bounce;
 }
-
+.modethemeresp ul{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: end;
+  padding-left: 10px;
+}
 .menuresp ul{
  height: 100vh;
   display: flex;
@@ -844,8 +872,9 @@ button:active::after {
 .modethemeresp {
   position: fixed;
   display: flex;
-  justify-items: flex-start;
+  justify-items: flex-end;
   width: 300px;
+  height: 100vh;
   right: 0;
   bottom: 0;
   z-index: 41;
@@ -861,11 +890,8 @@ button:active::after {
   -o-transition: var(--trans-03);
 }
 
+
 .modethemeresp.active {
-  position: fixed;
-  display: flex;
-  justify-items: flex-start;
-  width: 300px;
   right: 0;
   bottom: 0;
   z-index: 41;
@@ -883,9 +909,6 @@ button:active::after {
 .social-media{
   margin-top: 10px;
 }
-
-
-
 
 }
 
@@ -908,6 +931,16 @@ footer input{
   -o-transform: translateX(0);
 }
 /* Fin footer */
+
+@media screen and (max-width: 867px) {
+  .reseau_social{
+    transform: translateX(-60%);
+    -webkit-transform: translateX(-60%);
+    -moz-transform: translateX(-60%);
+    -ms-transform: translateX(-60%);
+    -o-transform: translateX(-60%);
+}
+}
 @media screen and (max-width: 817px) {
   .calldetail,
   .detailcall{
@@ -920,11 +953,54 @@ footer input{
   }
 }
 
+@media screen and (max-width: 767px) {
+  .about_grid{
+    display: none;
+    flex-direction: column;
+  }
+  .reseau_social{
+    transform: translateX(-20%);
+    -webkit-transform: translateX(-20%);
+    -moz-transform: translateX(-20%);
+    -ms-transform: translateX(-20%);
+    -o-transform: translateX(-20%);
+}
+
+}
+
+
+@media screen and (max-width: 724px) {
+  .about_grid{
+    display: none;
+    flex-direction: column;
+  }
+}
 
 @media screen and (max-width: 682px) {
   #searchstyle{
     display: none;
   }
+}
+
+@media screen and (max-width: 557px) {
+ 
+  .reseau_social{
+    transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -moz-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    -o-transform: translateX(-25%);
+}
+}
+
+@media screen and (max-width: 434px) {
+  .reseau_social{
+    transform: translateX(-40%) translateY(50%) scale(.5);
+    -webkit-transform: translateX(-40%) translateY(50%) scale(.5);
+    -moz-transform: translateX(-40%) translateY(50%) scale(.5);
+    -ms-transform: translateX(-40%) translateY(50%) scale(.5);
+    -o-transform: translateX(-40%) translateY(50%) scale(.5);
+}
 }
 
 /* Animation */

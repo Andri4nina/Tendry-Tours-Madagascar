@@ -16,6 +16,57 @@ function ToggleMenu() {
 }
 
 
+const AllSection = document.querySelectorAll('section');
+AllSection.forEach((Section) => {
+  Section.addEventListener('click', function(event) {
+    btn_toggler.classList.remove('active');
+    menu_open.classList.remove('active');
+    modetheme_open.classList.remove('active'); 
+  });
+});
+
+const navLinks = document.querySelectorAll('.nav-menu');
+document.addEventListener('scroll', function() {
+  AllSection.forEach((section) => {
+    var rect = section.getBoundingClientRect();
+    var topSection = rect.top;
+
+    // Utilisez une tolérance pour considérer que la section est à la vue
+    var tolerance = 200 ; // Ajustez la tolérance selon vos besoins
+
+    if (topSection >= -tolerance && topSection <= tolerance) {
+      var targetNavItem = document.querySelector(`.nav-menu a[href="#${section.id}"]`);
+      navLinks.forEach((navLink) => {
+        navLink.classList.remove('active');
+      });
+      targetNavItem.parentNode.classList.add('active');
+    }
+  });
+});
+
+
+
+ 
+
+const Acceuil_Section = document.querySelector('#Acceuil');
+const Myheader = document.querySelector('.Myheader');
+
+document.addEventListener('scroll', function() {
+    var rect = Acceuil_Section.getBoundingClientRect();
+    var top_acceuil = rect.top;
+
+    if (top_acceuil >= -10) {
+      Myheader.classList.remove('header_hide', 'header_semi_hide');
+    } else if (top_acceuil >= -270 && top_acceuil <= -10) {
+        Myheader.classList.add('header_hide');
+    } else {
+        Myheader.classList.add('header_semi_hide');
+    }
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-menu');
 
