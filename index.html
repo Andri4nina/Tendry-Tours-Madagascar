@@ -29,7 +29,7 @@
                 <i class="fa fa-phone rotate-90"></i>
             </div>
 
-            <div class=" flex flex-col justify-start detailcall">
+            <div class=" flex flex-col justify-start text-shadow detailcall">
                 <span>
                     Pour plus de details
                 </span>
@@ -42,7 +42,7 @@
             <div class="w-1/3 flex justify-end">
                 <img src="img/Logo.png" alt="" class="w-20 h-20">
             </div>
-            <div class="w-2/3">
+            <div class="text-shadow w-2/3">
                 <h3>Tendry <span class="text-skin1">Tours</span> <span class="text-skin2">Madagascar</span> </h3>
             </div>
         </div>
@@ -52,7 +52,7 @@
                     <input class="w-full relative" id="search-input" type="search" placeholder="ceci est en mode beta"> 
                 </div>
                 <div class="w-1/4">
-                    <i class="relative fa fa-search" onclick="toggleseacrhbox()"></i>
+                    <i class="text-shadow relative fa fa-search" onclick="toggleseacrhbox()"></i>
                 </div>
               
             </div>
@@ -66,8 +66,9 @@
 
     </div>
     
-    <div class="max-w-5xl mx-auto  flex items-center">
-        <div class="w-1/6 flex justify-center">
+ 
+    <div class="w-full max-w-6xl flex justify-around items-center">
+        <div class="w-2/12 flex justify-center">
             <div class="flex justify-around items-center gap-5 social-media">
                 <div class="social-media-container" id="mediaFacebook">
                     <i class="fa fa-facebook"></i>
@@ -80,9 +81,8 @@
                 </div>
             </div>
         </div>
-        
-        <div class="w-4/6 flex justify-center menuresp">
-            <ul class="relative flex gap-5 justify-between">
+        <div class="w-10/12 flex items-center justify-evenly menuresp ">
+            <ul class="w-8/12 relative flex  gap-5 text-shadow justify-evenly">
                 <li class="nav-menu active"><a href="#Acceuil">Acceuil</a></li>
                 <li class="nav-menu"><a href="#A_propos">A propos</a></li>
                 <li class="nav-menu"><a href="#Service">Service</a></li>
@@ -90,30 +90,39 @@
                 <li class="nav-menu"><a href="#Galerie">Galerie</a></li>
                 <li class="nav-menu"><a href="#Contact">Contact</a></li>
             </ul>
-         
-        </div>
-
-        <div class="w-1/6  modethemeresp ">
-            <ul class="w-full flex  justify-center">
-                <li class="h-12 mt-3 list-none gap-2 flex items-center mode">
-                    <div class="relative moon-sun overflow-hidden light">
-                        <div class="absolute w-full h-full top-0 left-0 sun-component">
-                            <img src="img/component/sun.jpeg" alt="" class="w-full h-full object-cover">
+            
+            <div class="w-4/12 thememode">
+                <ul class="w-full flex items-center  justify-center">
+                    <li class="h-12 mt-3 list-none gap-2 flex items-center mode">
+                        <div class="relative moon-sun overflow-hidden light">
+                            <div class="absolute w-full h-full top-0 left-0 sun-component">
+                                <img src="img/component/sun.jpeg" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute w-full h-full top-0 left-0 moon-component">
+                                <img src="img/component/moon.jpg" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <div class="cursor-pointer sun" id="moon-sun-img" onclick="modeSwitcher()">
+                            </div>
+                            
                         </div>
-                        <div class="absolute w-full h-full top-0 left-0 moon-component">
-                            <img src="img/component/moon.jpg" alt="" class="w-full h-full object-cover">
-                        </div>
-                        <div class="cursor-pointer sun" id="moon-sun-img" onclick="modeSwitcher()">
-                        </div>
-                        
+                    </li>
+                    <li class="h-12 mt-3 translate-x-4 list-none flex items-center gap-5 theme">
+                       <input type="color" id="stylecolor" class="flex items-center justify-center w-5 h-5 rounded-md border-none bg-transparent cursor-pointer appearance-none">
+                    </li> 
+                </ul>
+               
+            </div> 
+            <div class="w-full logoresp">
+                <div class="w-full block justify-center items-center">
+                    <div class="flex">
+                        <img src="img/Logo.png" alt="" class="object-cover w-52 h-20">
                     </div>
-                </li>
-                <li class="h-12 mt-3 translate-x-4 list-none flex items-center gap-5 theme">
-                   <input type="color" id="stylecolor" class="flex items-center justify-center w-5 h-5 rounded-md border-none bg-transparent cursor-pointer appearance-none">
-                </li> 
-            </ul>
-           
-        </div> 
+                    <div class="text-shadow ">
+                        <h3>Tendry <span class="text-skin1">Tours</span> <span class="text-skin2">Madagascar</span> </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -383,6 +392,7 @@
      
     </div>
 </section>
+
 <section class=" min-h-screen max-w-5xl mx-auto relative  pt-5" id="Contact">
     <div class="w-full text-center"><h3 class="section-title w-80 mx-auto">Contact</h3></div>
     <div class="h-screen w-full ">

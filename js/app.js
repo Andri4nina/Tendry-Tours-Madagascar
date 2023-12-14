@@ -54,13 +54,14 @@ const Myheader = document.querySelector('.Myheader');
 document.addEventListener('scroll', function() {
     var rect = Acceuil_Section.getBoundingClientRect();
     var top_acceuil = rect.top;
-
     if (top_acceuil >= -10) {
-      Myheader.classList.remove('header_hide', 'header_semi_hide');
+      Myheader.classList.remove('hide', 'showhalf');
     } else if (top_acceuil >= -270 && top_acceuil <= -10) {
-        Myheader.classList.add('header_hide');
+        Myheader.classList.add('hide');
+        Myheader.classList.remove('showhalf');
     } else {
-        Myheader.classList.add('header_semi_hide');
+      Myheader.classList.remove('hide');
+        Myheader.classList.add('showhalf');
     }
 });
 
