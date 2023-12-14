@@ -127,6 +127,9 @@ button:active::after {
 .text-shadow{
   text-shadow: 0px 5px 5px var(--bg-black-900),0px -5px 5px var(--bg-black-900),5px 0px 5px var(--bg-black-900),-5px 0px 5px var(--bg-black-900);
 }
+.text-shadow-light{
+  text-shadow: 0px 5px 5px var(--text-black-900),0px -5px 5px var(--text-black-900),5px 0px 5px var(--text-black-900),-5px 0px 5px var(--bg-black-900);
+}
 
 /* background */
 .bg-skin1{
@@ -410,11 +413,12 @@ button:active::after {
 .nav-menu:hover{
   color: var(--skin--color1);
   letter-spacing: 2px;
+  font-weight: 900;
 }
 
 .nav-menu.active{
   font-weight: 900;
-  border-bottom: 3px solid var(--skin--color2);
+  border-bottom: 3px solid var(--skin--color1);
 }
 
 
