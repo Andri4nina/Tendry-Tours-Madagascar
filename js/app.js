@@ -31,8 +31,7 @@ document.addEventListener('scroll', function() {
     var rect = section.getBoundingClientRect();
     var topSection = rect.top;
 
-    // Utilisez une tolérance pour considérer que la section est à la vue
-    var tolerance = 200 ; // Ajustez la tolérance selon vos besoins
+    var tolerance = 200 ; 
 
     if (topSection >= -tolerance && topSection <= tolerance) {
       var targetNavItem = document.querySelector(`.nav-menu a[href="#${section.id}"]`);
@@ -75,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(event) {
       navLinks.forEach(link => link.classList.remove('active'));
       this.classList.add('active');
-
+      this.document.querySelector('a').click();
     });
   });
 
-  this.document.querySelector('a').click();
+ 
 
 });
 
