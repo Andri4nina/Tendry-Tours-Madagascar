@@ -238,21 +238,22 @@ function lightenColor(color, percent) {
 });
 
 
-/* card3d */
-$(document).ready(function() {
-  const cards = document.querySelectorAll(".card3d");
-  
-  cards.forEach(card => {
-      const boundingBox = card.getBoundingClientRect();
-      const centerX = boundingBox.left + boundingBox.width / 4;
-      const centerY = boundingBox.top + boundingBox.height / 4;
 
-      card.addEventListener("mousemove", e => {
-          const { pageX, pageY } = e;
-          const [diffX, diffY] = [centerX - pageX, centerY - pageY];
-          card.style.transform = `translateZ(-40px) rotateX(${diffY / 65}deg) rotateY(${-diffX / 65}deg)`;
-      });
-  });
-});
+document.getElementById('next').onclick = function(){
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').appendChild(lists[0]);
+}
+document.getElementById('prev').onclick = function(){
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').prepend(lists[lists.length - 1]);
+}
 
+
+
+function moveElement() {
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').appendChild(lists[0]);
+}
+moveElement();
+setInterval(moveElement, 7000);
 
